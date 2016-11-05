@@ -142,7 +142,7 @@ func (u *upload) Run(args []string) (err error) {
 					continue
 				}
 				name := walker.Path()
-				for name[0] == '/' {
+				for name[0] == os.PathSeparator {
 					name = name[1:]
 				}
 				if walker.Stat().Mode().IsDir() {
